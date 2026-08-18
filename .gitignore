@@ -1,0 +1,22 @@
+# Konfigurasi Database & Environment
+config/database.php
+.env
+
+# Database Dump / Backup
+db/*.sql
+
+# IDE & Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
