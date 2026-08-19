@@ -3,20 +3,35 @@
 // KONFIGURASI DATABASE - SIPP UPTD PUSKESMAS IPUH
 // ============================================================
 
-$envHost = getenv('MYSQLHOST') ?: 'mysql.railway.internal';
-if (!is_string($envHost) || strpos($envHost, '${{') !== false) $envHost = 'mysql.railway.internal';
+$mysqlUrl = getenv('MYSQL_URL') ?: $_ENV['MYSQL_URL'] ?? null;
 
-$envDb = getenv('MYSQLDATABASE') ?: 'railway';
-if (!is_string($envDb) || strpos($envDb, '${{') !== false) $envDb = 'railway';
+if ($mysqlUrl && is_string($mysqlUrl) && strpos($mysqlUrl, '${{') === false) {
+    $parsed = parse_url($mysqlUrl);
+    $envHost = $parsed['host'] ?? 'mysql.railway.internal';
+    $envUser = $parsed['user'] ?? 'root';
+    $envPass = $parsed['pass'] ?? '';
+    $envDb   = isset($parsed['path']) ? ltrim($parsed['path'], '/') : 'railway';
+    $envPort = $parsed['port'] ?? '3306';
+} else {
+    // Fallback jika MYSQL_URL gagal dibaca
+    $envHost = getenv('MYSQLHOST') ?: 'mysql.railway.internal';
+    if (!is_string($envHost) || strpos($envHost, '${{') !== false) $envHost = 'mysql.railway.internal';
 
-$envPass = getenv('MYSQLPASSWORD') ?: 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
-if (!is_string($envPass) || strpos($envPass, '${{') !== false) $envPass = 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
+    $envDb = getenv('MYSQLDATABASE') ?: 'railway';
+    if (!is_string($envDb) || strpos($envDb, '${{') !== false) $envDb = 'railway';
+
+    $envPass = getenv('MYSQLPASSWORD') ?: 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
+    if (!is_string($envPass) || strpos($envPass, '${{') !== false) $envPass = 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
+    
+    $envUser = 'root';
+    $envPort = '3306';
+}
 
 define('DB_HOST', $envHost);
 define('DB_NAME', $envDb);
-define('DB_USER', 'root');
+define('DB_USER', $envUser);
 define('DB_PASS', $envPass);
-define('DB_PORT', '3306');
+define('DB_PORT', $envPort);
 define('DB_CHARSET', 'utf8mb4');
 
 // Base URL (sesuaikan jika folder berbeda)
