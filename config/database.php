@@ -4,6 +4,7 @@
 // ============================================================
 
 $mysqlUrl = getenv('MYSQL_URL');
+$isRailway = getenv('RAILWAY_ENVIRONMENT') || getenv('RAILWAY_PUBLIC_DOMAIN');
 
 if ($mysqlUrl && strpos($mysqlUrl, '${{') === false) {
     $parsed = parse_url($mysqlUrl);
@@ -12,8 +13,8 @@ if ($mysqlUrl && strpos($mysqlUrl, '${{') === false) {
     $envPass = isset($parsed['pass']) ? $parsed['pass'] : '';
     $envDb   = isset($parsed['path']) ? ltrim($parsed['path'], '/') : 'railway';
     $envPort = isset($parsed['port']) ? $parsed['port'] : '3306';
-} else {
-    // Fallback murni dan paling aman
+} elseif ($isRailway) {
+    // Fallback murni jika gagal baca URL di Railway
     $envHost = getenv('MYSQLHOST') ? getenv('MYSQLHOST') : 'mysql.railway.internal';
     if (strpos($envHost, '${{') !== false) $envHost = 'mysql.railway.internal';
 
@@ -24,6 +25,13 @@ if ($mysqlUrl && strpos($mysqlUrl, '${{') === false) {
     if (strpos($envPass, '${{') !== false) $envPass = 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
     
     $envUser = 'root';
+    $envPort = '3306';
+} else {
+    // Fallback Lokal (Laragon)
+    $envHost = 'localhost';
+    $envDb   = 'sipp_puskesmas';
+    $envUser = 'root';
+    $envPass = '';
     $envPort = '3306';
 }
 
