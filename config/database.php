@@ -7,6 +7,7 @@ define('DB_HOST', getenv('MYSQL_HOST') ?: getenv('MYSQLHOST') ?: 'localhost');
 define('DB_NAME', getenv('MYSQL_DATABASE') ?: 'sipp_puskesmas');
 define('DB_USER', getenv('MYSQL_USER') ?: getenv('MYSQLUSER') ?: 'root');       // Ganti jika menggunakan user MySQL lain
 define('DB_PASS', getenv('MYSQL_PASSWORD') ?: getenv('MYSQLPASSWORD') ?: getenv('MYSQL_ROOT_PASSWORD') ?: '');       // Ganti jika ada password MySQL
+define('DB_PORT', getenv('MYSQL_PORT') ?: getenv('MYSQLPORT') ?: '3306');
 define('DB_CHARSET', 'utf8mb4');
 
 // Base URL (sesuaikan jika folder berbeda)
@@ -17,7 +18,7 @@ define('BASE_PATH', dirname(__DIR__));
 function getPDO(): PDO {
     static $pdo = null;
     if ($pdo === null) {
-        $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+        $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
