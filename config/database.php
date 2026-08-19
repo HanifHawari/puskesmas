@@ -3,20 +3,15 @@
 // KONFIGURASI DATABASE - SIPP UPTD PUSKESMAS IPUH
 // ============================================================
 
-$envHost = getenv('MYSQLHOST') ?: $_ENV['MYSQLHOST'] ?? 'mysql.railway.internal';
-if (strpos($envHost, '${{') !== false) $envHost = 'mysql.railway.internal';
-
-$envDb = getenv('MYSQLDATABASE') ?: $_ENV['MYSQLDATABASE'] ?? 'railway';
-if (strpos($envDb, '${{') !== false) $envDb = 'railway';
-
-$envPass = getenv('MYSQLPASSWORD') ?: $_ENV['MYSQLPASSWORD'] ?? 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
-if (strpos($envPass, '${{') !== false) $envPass = 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
+$envHost = 'altaria.proxy.rlwy.net';
+$envDb = 'railway';
+$envPass = 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
 
 define('DB_HOST', $envHost);
 define('DB_NAME', $envDb);
 define('DB_USER', 'root');
 define('DB_PASS', $envPass);
-define('DB_PORT', '3306');
+define('DB_PORT', '34261');
 define('DB_CHARSET', 'utf8mb4');
 
 // Base URL (sesuaikan jika folder berbeda)
