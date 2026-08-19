@@ -3,25 +3,25 @@
 // KONFIGURASI DATABASE - SIPP UPTD PUSKESMAS IPUH
 // ============================================================
 
-$mysqlUrl = getenv('MYSQL_URL') ?: $_ENV['MYSQL_URL'] ?? null;
+$mysqlUrl = getenv('MYSQL_URL');
 
-if ($mysqlUrl && is_string($mysqlUrl) && strpos($mysqlUrl, '${{') === false) {
+if ($mysqlUrl && strpos($mysqlUrl, '${{') === false) {
     $parsed = parse_url($mysqlUrl);
-    $envHost = $parsed['host'] ?? 'mysql.railway.internal';
-    $envUser = $parsed['user'] ?? 'root';
-    $envPass = $parsed['pass'] ?? '';
+    $envHost = isset($parsed['host']) ? $parsed['host'] : 'mysql.railway.internal';
+    $envUser = isset($parsed['user']) ? $parsed['user'] : 'root';
+    $envPass = isset($parsed['pass']) ? $parsed['pass'] : '';
     $envDb   = isset($parsed['path']) ? ltrim($parsed['path'], '/') : 'railway';
-    $envPort = $parsed['port'] ?? '3306';
+    $envPort = isset($parsed['port']) ? $parsed['port'] : '3306';
 } else {
-    // Fallback jika MYSQL_URL gagal dibaca
-    $envHost = getenv('MYSQLHOST') ?: 'mysql.railway.internal';
-    if (!is_string($envHost) || strpos($envHost, '${{') !== false) $envHost = 'mysql.railway.internal';
+    // Fallback murni dan paling aman
+    $envHost = getenv('MYSQLHOST') ? getenv('MYSQLHOST') : 'mysql.railway.internal';
+    if (strpos($envHost, '${{') !== false) $envHost = 'mysql.railway.internal';
 
-    $envDb = getenv('MYSQLDATABASE') ?: 'railway';
-    if (!is_string($envDb) || strpos($envDb, '${{') !== false) $envDb = 'railway';
+    $envDb = getenv('MYSQLDATABASE') ? getenv('MYSQLDATABASE') : 'railway';
+    if (strpos($envDb, '${{') !== false) $envDb = 'railway';
 
-    $envPass = getenv('MYSQLPASSWORD') ?: 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
-    if (!is_string($envPass) || strpos($envPass, '${{') !== false) $envPass = 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
+    $envPass = getenv('MYSQLPASSWORD') ? getenv('MYSQLPASSWORD') : 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
+    if (strpos($envPass, '${{') !== false) $envPass = 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
     
     $envUser = 'root';
     $envPort = '3306';
