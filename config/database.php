@@ -5,8 +5,8 @@
 
 define('DB_HOST', getenv('MYSQL_HOST') ?: getenv('MYSQLHOST') ?: 'localhost');
 define('DB_NAME', getenv('MYSQL_DATABASE') ?: 'sipp_puskesmas');
-define('DB_USER', getenv('MYSQL_USER') ?: 'root');       // Ganti jika menggunakan user MySQL lain
-define('DB_PASS', getenv('MYSQL_PASSWORD') ?: '');       // Ganti jika ada password MySQL
+define('DB_USER', getenv('MYSQL_USER') ?: getenv('MYSQLUSER') ?: 'root');       // Ganti jika menggunakan user MySQL lain
+define('DB_PASS', getenv('MYSQL_PASSWORD') ?: getenv('MYSQLPASSWORD') ?: getenv('MYSQL_ROOT_PASSWORD') ?: '');       // Ganti jika ada password MySQL
 define('DB_CHARSET', 'utf8mb4');
 
 // Base URL (sesuaikan jika folder berbeda)
