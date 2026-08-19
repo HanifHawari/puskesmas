@@ -3,10 +3,10 @@
 // KONFIGURASI DATABASE - SIPP UPTD PUSKESMAS IPUH
 // ============================================================
 
-define('DB_HOST', getenv('MYSQL_HOST') ?: getenv('MYSQLHOST') ?: $_ENV['MYSQLHOST'] ?? $_SERVER['MYSQLHOST'] ?? 'localhost');
-define('DB_NAME', getenv('MYSQLDATABASE') ?: getenv('MYSQL_DATABASE') ?: $_ENV['MYSQLDATABASE'] ?? $_ENV['MYSQL_DATABASE'] ?? $_SERVER['MYSQLDATABASE'] ?? 'sipp_puskesmas');
+define('DB_HOST', getenv('MYSQL_HOST') ?: getenv('MYSQLHOST') ?: $_ENV['MYSQLHOST'] ?? $_SERVER['MYSQLHOST'] ?? 'mysql.railway.internal');
+define('DB_NAME', getenv('MYSQLDATABASE') ?: getenv('MYSQL_DATABASE') ?: $_ENV['MYSQLDATABASE'] ?? $_ENV['MYSQL_DATABASE'] ?? $_SERVER['MYSQLDATABASE'] ?? 'railway');
 define('DB_USER', getenv('MYSQL_USER') ?: getenv('MYSQLUSER') ?: $_ENV['MYSQLUSER'] ?? $_SERVER['MYSQLUSER'] ?? 'root');
-define('DB_PASS', getenv('MYSQLPASSWORD') ?: getenv('MYSQL_PASSWORD') ?: getenv('MYSQL_ROOT_PASSWORD') ?: $_ENV['MYSQLPASSWORD'] ?? $_SERVER['MYSQLPASSWORD'] ?? '');
+define('DB_PASS', getenv('MYSQLPASSWORD') ?: getenv('MYSQL_PASSWORD') ?: getenv('MYSQL_ROOT_PASSWORD') ?: $_ENV['MYSQLPASSWORD'] ?? $_SERVER['MYSQLPASSWORD'] ?? 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP');
 define('DB_PORT', getenv('MYSQL_PORT') ?: getenv('MYSQLPORT') ?: $_ENV['MYSQLPORT'] ?? $_SERVER['MYSQLPORT'] ?? '3306');
 define('DB_CHARSET', 'utf8mb4');
 
