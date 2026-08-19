@@ -1,5 +1,5 @@
 [variables]
-NIXPACKS_PHP_EXTENSIONS = "pdo_mysql,mysqli"
+NIXPACKS_PHP_EXTENSIONS = "pdo_pgsql,pgsql"
 
 [start]
 cmd = "php -S 0.0.0.0:${PORT:-8080} -t ."
