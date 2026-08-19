@@ -3,31 +3,18 @@
 // KONFIGURASI DATABASE - SIPP UPTD PUSKESMAS IPUH
 // ============================================================
 
-$mysqlUrl = getenv('MYSQL_URL');
-$isRailway = getenv('RAILWAY_ENVIRONMENT') || getenv('RAILWAY_PUBLIC_DOMAIN');
+$isRailway = getenv('RAILWAY_ENVIRONMENT') || getenv('RAILWAY_PUBLIC_DOMAIN') || isset($_SERVER['RAILWAY_PUBLIC_DOMAIN']);
 
-if ($mysqlUrl && strpos($mysqlUrl, '${{') === false) {
-    $parsed = parse_url($mysqlUrl);
-    $envHost = isset($parsed['host']) ? $parsed['host'] : 'mysql.railway.internal';
-    $envUser = isset($parsed['user']) ? $parsed['user'] : 'root';
-    $envPass = isset($parsed['pass']) ? $parsed['pass'] : '';
-    $envDb   = isset($parsed['path']) ? ltrim($parsed['path'], '/') : 'railway';
-    $envPort = isset($parsed['port']) ? $parsed['port'] : '3306';
-} elseif ($isRailway) {
-    // Fallback murni jika gagal baca URL di Railway
-    $envHost = getenv('MYSQLHOST') ? getenv('MYSQLHOST') : 'mysql.railway.internal';
-    if (strpos($envHost, '${{') !== false) $envHost = 'mysql.railway.internal';
-
-    $envDb = getenv('MYSQLDATABASE') ? getenv('MYSQLDATABASE') : 'railway';
-    if (strpos($envDb, '${{') !== false) $envDb = 'railway';
-
-    $envPass = getenv('MYSQLPASSWORD') ? getenv('MYSQLPASSWORD') : 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
-    if (strpos($envPass, '${{') !== false) $envPass = 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
-    
+if ($isRailway) {
+    // 100% JALUR BYPASS - TANPA BACA VARIABEL RAILWAY SAMA SEKALI
+    // Menggunakan jalur TCP Proxy (sama seperti HeidiSQL) yang sudah pasti jalan
+    $envHost = 'altaria.proxy.rlwy.net';
+    $envDb   = 'railway';
     $envUser = 'root';
-    $envPort = '3306';
+    $envPass = 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
+    $envPort = '34261';
 } else {
-    // Fallback Lokal (Laragon)
+    // LOKAL LARAGON
     $envHost = 'localhost';
     $envDb   = 'sipp_puskesmas';
     $envUser = 'root';
