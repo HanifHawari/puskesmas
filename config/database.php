@@ -3,11 +3,11 @@
 // KONFIGURASI DATABASE - SIPP UPTD PUSKESMAS IPUH
 // ============================================================
 
-define('DB_HOST', getenv('MYSQL_HOST') ?: getenv('MYSQLHOST') ?: 'localhost');
-define('DB_NAME', getenv('MYSQL_DATABASE') ?: 'sipp_puskesmas');
-define('DB_USER', getenv('MYSQL_USER') ?: getenv('MYSQLUSER') ?: 'root');       // Ganti jika menggunakan user MySQL lain
-define('DB_PASS', getenv('MYSQL_PASSWORD') ?: getenv('MYSQLPASSWORD') ?: getenv('MYSQL_ROOT_PASSWORD') ?: '');       // Ganti jika ada password MySQL
-define('DB_PORT', getenv('MYSQL_PORT') ?: getenv('MYSQLPORT') ?: '3306');
+define('DB_HOST', getenv('MYSQL_HOST') ?: getenv('MYSQLHOST') ?: $_ENV['MYSQLHOST'] ?? $_SERVER['MYSQLHOST'] ?? 'localhost');
+define('DB_NAME', getenv('MYSQL_DATABASE') ?: $_ENV['MYSQL_DATABASE'] ?? $_SERVER['MYSQL_DATABASE'] ?? 'sipp_puskesmas');
+define('DB_USER', getenv('MYSQL_USER') ?: getenv('MYSQLUSER') ?: $_ENV['MYSQLUSER'] ?? $_SERVER['MYSQLUSER'] ?? 'root');
+define('DB_PASS', getenv('MYSQL_PASSWORD') ?: getenv('MYSQLPASSWORD') ?: getenv('MYSQL_ROOT_PASSWORD') ?: $_ENV['MYSQLPASSWORD'] ?? $_SERVER['MYSQLPASSWORD'] ?? '');
+define('DB_PORT', getenv('MYSQL_PORT') ?: getenv('MYSQLPORT') ?: $_ENV['MYSQLPORT'] ?? $_SERVER['MYSQLPORT'] ?? '3306');
 define('DB_CHARSET', 'utf8mb4');
 
 // Base URL (sesuaikan jika folder berbeda)
@@ -29,7 +29,7 @@ function getPDO(): PDO {
         } catch (PDOException $e) {
             die('<div style="font-family:sans-serif;padding:2rem;background:#fee;color:#900;border:1px solid #f99;border-radius:8px;">
                 <strong>Koneksi Database Gagal!</strong><br>
-                Pastikan MySQL sudah berjalan dan database <strong>sipp_puskesmas</strong> sudah dibuat.<br>
+                Mencoba terhubung ke: <strong>' . DB_HOST . '</strong> (Database: <strong>' . DB_NAME . '</strong>)<br>
                 Detail: ' . $e->getMessage() . '
                 </div>');
         }
