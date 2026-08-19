@@ -264,14 +264,12 @@
 @media (max-width: 900px) {
   .hero-content {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left;
     padding-block: var(--space-3xl);
   }
   .hero-visual { display: none; }
-  .hero-cta    { justify-content: center; }
-  .hero-stats  { justify-content: center; }
-  .hero-desc   { margin-inline: auto; }
-  .hero-eyebrow { margin-inline: auto; }
+  .hero-cta    { justify-content: flex-start; }
+  .hero-stats  { justify-content: flex-start; }
 }
 
 @media (max-width: 480px) {

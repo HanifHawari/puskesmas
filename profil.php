@@ -192,7 +192,23 @@ $extraHead = <<<HTML
       /* Staff grid */
       .staff-grid { grid-template-columns: repeat(2, 1fr); }
       /* Layanan grid */
-      .layanan-grid { grid-template-columns: 1fr; }
+      .layanan-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 1rem !important;
+        padding-bottom: 0.5rem !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .layanan-grid::-webkit-scrollbar { display: none; }
+      .layanan-grid .poli-card {
+        flex: 0 0 85% !important;
+        min-width: 85% !important;
+        max-width: 85% !important;
+        scroll-snap-align: center !important;
+      }
     }
 
     @media (max-width: 480px) {
@@ -555,15 +571,16 @@ include 'includes/header.php';
       <div class="profil-lokasi" style="display:grid;grid-template-columns:2fr 1fr;gap:2.5rem;align-items:start;">
         <!-- Map -->
         <div>
-          <div style="border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);height:450px;background:var(--clr-gray-100);display:flex;align-items:center;justify-content:center;">
-            <div style="text-align:center;color:var(--clr-gray-400);">
-              <i class="fas fa-map-location-dot" style="font-size:3rem;margin-bottom:1rem;color:var(--clr-accent);display:block;"></i>
-              <p>Peta Google Maps</p>
-              <p style="font-size:0.8rem;">Ganti iframe Google Maps dengan koordinat yang tepat</p>
-              <a href="https://maps.google.com/?q=Puskesmas+Ipuh+Mukomuko" target="_blank" class="btn btn-primary" style="margin-top:1rem;" id="maps-link-btn">
-                <i class="fas fa-external-link-alt"></i> Buka di Google Maps
-              </a>
-            </div>
+          <div style="border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);height:450px;background:var(--clr-gray-100);">
+            <iframe 
+              src="https://maps.google.com/maps?q=-3.0048965,101.491348&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
 

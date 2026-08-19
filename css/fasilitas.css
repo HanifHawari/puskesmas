@@ -273,15 +273,41 @@
   .fas-card, .poli-card {
     flex: 0 0 85% !important;
     min-width: 85% !important;
+    max-width: 85% !important;
     scroll-snap-align: center !important;
+  }
+  .poli-card {
+    overflow: hidden !important;
+  }
+  .poli-card-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .poli-card-name { 
+    white-space: normal;
+    word-break: break-word;
+  }
+  .poli-card-dokter {
+    white-space: normal;
+  }
+  .poli-card-info {
+    overflow: hidden;
+  }
+  .poli-daftar-btn {
+    min-height: 44px;
+    flex-shrink: 0;
   }
   .fasilitas-header    { flex-direction: column; align-items: flex-start; }
   .legend { gap: 0.75rem; }
   .fasilitas-section-header { flex-wrap: wrap; }
-  .poli-card-name { white-space: normal; }
 }
 
 @media (max-width: 480px) {
   .fasilitas-header { gap: 0.75rem; }
   .legend { flex-wrap: wrap; gap: 0.5rem; }
+  .fas-card, .poli-card {
+    flex: 0 0 90% !important;
+    min-width: 90% !important;
+    max-width: 90% !important;
+  }
 }

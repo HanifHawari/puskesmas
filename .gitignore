@@ -1,6 +1,8 @@
-# Konfigurasi Database & Environment
-config/database.php
+# Konfigurasi Environment
 .env
+
+# Uploads user
+assets/uploads/
 
 # Database Dump / Backup
 db/*.sql

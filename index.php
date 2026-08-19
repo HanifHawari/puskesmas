@@ -81,7 +81,6 @@ if (pengumumanData && pengumumanData.length > 1) {
     <div class="section-header">
       <span class="section-label"><i class="fas fa-th-large"></i> Layanan Kami</span>
       <h2 class="section-title" id="layanan-title">Akses Layanan dengan Mudah</h2>
-      <div class="section-divider"></div>
       <p class="section-subtitle">Temukan semua layanan kesehatan yang Anda butuhkan dalam satu platform digital yang mudah digunakan.</p>
     </div>
     <div class="quick-nav-grid">
@@ -123,7 +122,6 @@ if (pengumumanData && pengumumanData.length > 1) {
     <div class="section-header">
       <span class="section-label"><i class="fas fa-images"></i> Galeri</span>
       <h2 class="section-title" id="galeri-title">Mengenal Puskesmas Ipuh</h2>
-      <div class="section-divider"></div>
       <p class="section-subtitle">Fasilitas dan kegiatan pelayanan kesehatan UPTD Puskesmas Ipuh untuk masyarakat Kecamatan Ipuh.</p>
     </div>
     <div class="galeri-carousel-wrap" id="galeriCarouselWrap">
@@ -233,7 +231,6 @@ if (pengumumanData && pengumumanData.length > 1) {
     <div class="section-header">
       <span class="section-label"><i class="fas fa-link"></i> Tautan Terkait</span>
       <h2 class="section-title" id="tautan-title">Instansi & Layanan Terkait</h2>
-      <div class="section-divider"></div>
       <p class="section-subtitle">Kunjungi portal instansi pemerintah dan layanan kesehatan yang berhubungan dengan Puskesmas Ipuh.</p>
     </div>
 
@@ -243,7 +240,7 @@ if (pengumumanData && pengumumanData.length > 1) {
 
         <div class="tautan-slide">
           <a href="https://www.kemkes.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-kemenkes">
-            <div class="tautan-logo-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Ministry_of_Health_of_the_Republic_of_Indonesia.svg/200px-Seal_of_the_Ministry_of_Health_of_the_Republic_of_Indonesia.svg.png" alt="Kemenkes RI" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-hospital"></i></div></div>
+            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=kemkes.go.id&sz=128" alt="Kemenkes RI" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-hospital"></i></div></div>
             <div class="tautan-logo-name">Kementerian Kesehatan RI</div>
             <div class="tautan-logo-url">kemkes.go.id</div>
           </a>
@@ -251,7 +248,7 @@ if (pengumumanData && pengumumanData.length > 1) {
 
         <div class="tautan-slide">
           <a href="https://mukomukokab.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-mukomuko">
-            <div class="tautan-logo-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Lambang_Kabupaten_Mukomuko.png/300px-Lambang_Kabupaten_Mukomuko.png" alt="Pemkab Mukomuko" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-building-columns"></i></div></div>
+            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=mukomukokab.go.id&sz=128" alt="Pemkab Mukomuko" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-building-columns"></i></div></div>
             <div class="tautan-logo-name">Pemkab Mukomuko</div>
             <div class="tautan-logo-url">mukomukokab.go.id</div>
           </a>
@@ -259,7 +256,7 @@ if (pengumumanData && pengumumanData.length > 1) {
 
         <div class="tautan-slide">
           <a href="https://www.bpjs-kesehatan.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-bpjs">
-            <div class="tautan-logo-img"><img src="https://upload.wikimedia.org/wikipedia/id/thumb/b/b4/BPJS_Kesehatan_logo.svg/320px-BPJS_Kesehatan_logo.svg.png" alt="BPJS Kesehatan" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-id-card"></i></div></div>
+            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=bpjs-kesehatan.go.id&sz=128" alt="BPJS Kesehatan" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-id-card"></i></div></div>
             <div class="tautan-logo-name">BPJS Kesehatan</div>
             <div class="tautan-logo-url">bpjs-kesehatan.go.id</div>
           </a>
@@ -267,7 +264,7 @@ if (pengumumanData && pengumumanData.length > 1) {
 
         <div class="tautan-slide">
           <a href="https://satusehat.kemkes.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-satusehat">
-            <div class="tautan-logo-img"><img src="https://satusehat.kemkes.go.id/sdmk/assets/img/logo-satusehat.png" alt="SatuSehat Kemenkes" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#00a86b,#007a4f)"><i class="fas fa-shield-heart"></i></div></div>
+            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=satusehat.kemkes.go.id&sz=128" alt="SatuSehat Kemenkes" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#00a86b,#007a4f)"><i class="fas fa-shield-heart"></i></div></div>
             <div class="tautan-logo-name">SatuSehat Kemenkes</div>
             <div class="tautan-logo-url">satusehat.kemkes.go.id</div>
           </a>
@@ -275,7 +272,7 @@ if (pengumumanData && pengumumanData.length > 1) {
 
         <div class="tautan-slide">
           <a href="https://bengkuluprov.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-bengkulu">
-            <div class="tautan-logo-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Coat_of_arms_of_Bengkulu.svg/200px-Coat_of_arms_of_Bengkulu.svg.png" alt="Pemprov Bengkulu" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#c0392b,#922b21)"><i class="fas fa-map-location-dot"></i></div></div>
+            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=bengkuluprov.go.id&sz=128" alt="Pemprov Bengkulu" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#c0392b,#922b21)"><i class="fas fa-map-location-dot"></i></div></div>
             <div class="tautan-logo-name">Pemprov Bengkulu</div>
             <div class="tautan-logo-url">bengkuluprov.go.id</div>
           </a>
@@ -283,7 +280,7 @@ if (pengumumanData && pengumumanData.length > 1) {
 
         <div class="tautan-slide">
           <a href="https://www.lapor.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-lapor">
-            <div class="tautan-logo-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lapor_logo.png/320px-Lapor_logo.png" alt="Layanan LAPOR!" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#e67e22,#ca6f1e)"><i class="fas fa-comments"></i></div></div>
+            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=lapor.go.id&sz=128" alt="Layanan LAPOR!" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#e67e22,#ca6f1e)"><i class="fas fa-comments"></i></div></div>
             <div class="tautan-logo-name">Layanan LAPOR!</div>
             <div class="tautan-logo-url">lapor.go.id</div>
           </a>
@@ -291,7 +288,7 @@ if (pengumumanData && pengumumanData.length > 1) {
 
         <div class="tautan-slide">
           <a href="https://data.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-datago">
-            <div class="tautan-logo-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Satu_Data_Indonesia_logo.svg/320px-Satu_Data_Indonesia_logo.svg.png" alt="Satu Data Indonesia" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#2980b9,#1a5276)"><i class="fas fa-database"></i></div></div>
+            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=data.go.id&sz=128" alt="Satu Data Indonesia" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#2980b9,#1a5276)"><i class="fas fa-database"></i></div></div>
             <div class="tautan-logo-name">Portal Satu Data Indonesia</div>
             <div class="tautan-logo-url">data.go.id</div>
           </a>
@@ -299,7 +296,7 @@ if (pengumumanData && pengumumanData.length > 1) {
 
         <div class="tautan-slide">
           <a href="https://dukcapil.kemendagri.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-dukcapil">
-            <div class="tautan-logo-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Logo_of_the_Ministry_of_Home_Affairs_of_the_Republic_of_Indonesia.svg/200px-Logo_of_the_Ministry_of_Home_Affairs_of_the_Republic_of_Indonesia.svg.png" alt="Dukcapil Kemendagri" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#7d3c98,#6c3483)"><i class="fas fa-id-badge"></i></div></div>
+            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=kemendagri.go.id&sz=128" alt="Dukcapil Kemendagri" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#7d3c98,#6c3483)"><i class="fas fa-id-badge"></i></div></div>
             <div class="tautan-logo-name">Dukcapil Kemendagri</div>
             <div class="tautan-logo-url">kemendagri.go.id</div>
           </a>
@@ -466,7 +463,7 @@ if (pengumumanData && pengumumanData.length > 1) {
       <div class="reveal">
         <span class="section-label"><i class="fas fa-heart-pulse"></i> Tentang Kami</span>
         <h2 class="section-title" id="tentang-title" style="text-align:left;margin-bottom:1rem;">Lebih dari 4 Dekade<br>Melayani Masyarakat Ipuh</h2>
-        <div class="section-divider" style="margin-left:0;"></div>
+
         <p style="color:var(--clr-gray-600);line-height:1.8;margin-bottom:1.5rem;"><?= htmlspecialchars($profil['sejarah'] ?? '') ?></p>
         <p style="color:var(--clr-gray-600);line-height:1.8;margin-bottom:2rem;"><strong style="color:var(--clr-primary);">Visi:</strong> <?= htmlspecialchars($profil['visi'] ?? '') ?></p>
         <a href="profil.php" class="btn btn-primary" id="tentang-profil-btn"><i class="fas fa-building"></i> Selengkapnya</a>
@@ -503,7 +500,7 @@ if (pengumumanData && pengumumanData.length > 1) {
     <div style="text-align:center;max-width:700px;margin:0 auto;">
       <span class="section-label"><i class="fas fa-calendar-check"></i> Mulai Sekarang</span>
       <h2 class="section-title" style="margin-bottom:1rem;">Butuh Layanan Kesehatan?</h2>
-      <div class="section-divider" style="margin:0 auto 1.5rem;"></div>
+
       <p style="color:var(--clr-gray-600);font-size:1.05rem;line-height:1.7;margin-bottom:2rem;">Daftar antrian online sekarang dan hindari antrian panjang. Cukup beberapa menit dari rumah Anda.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
         <a href="pendaftaran.php" class="btn btn-primary btn-lg" id="cta-daftar-btn"><i class="fas fa-clipboard-list"></i> Daftar Online Sekarang</a>
@@ -512,6 +509,58 @@ if (pengumumanData && pengumumanData.length > 1) {
     </div>
   </div>
 </section>
+
+<style>
+/* Hold/Press effect — desktop only */
+@media (hover: hover) {
+  .galeri-img-wrap img.hold-active {
+    transform: scale(1.08) !important;
+    filter: brightness(1.1);
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+  .tautan-logo-card.hold-active {
+    transform: translateY(-8px) scale(1.03) !important;
+    box-shadow: 0 16px 48px rgba(26,71,49,0.25) !important;
+    border-color: var(--clr-accent) !important;
+    transition: all 0.15s ease !important;
+  }
+  .tautan-logo-img img.hold-active {
+    transform: scale(1.15);
+    transition: transform 0.15s ease;
+  }
+}
+</style>
+
+<script>
+// Hold/Press effect — desktop only
+(function(){
+  if (!window.matchMedia('(hover: hover)').matches) return;
+
+  // Galeri images
+  document.querySelectorAll('.galeri-img-wrap img').forEach(function(img){
+    img.addEventListener('mousedown', function(){ img.classList.add('hold-active'); });
+    img.addEventListener('mouseup',   function(){ img.classList.remove('hold-active'); });
+    img.addEventListener('mouseleave',function(){ img.classList.remove('hold-active'); });
+  });
+
+  // Tautan logo cards
+  document.querySelectorAll('.tautan-logo-card').forEach(function(card){
+    var img = card.querySelector('.tautan-logo-img img');
+    card.addEventListener('mousedown', function(){
+      card.classList.add('hold-active');
+      if(img) img.classList.add('hold-active');
+    });
+    card.addEventListener('mouseup', function(){
+      card.classList.remove('hold-active');
+      if(img) img.classList.remove('hold-active');
+    });
+    card.addEventListener('mouseleave', function(){
+      card.classList.remove('hold-active');
+      if(img) img.classList.remove('hold-active');
+    });
+  });
+})();
+</script>
 
 <?php include 'includes/footer.php'; ?>
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>

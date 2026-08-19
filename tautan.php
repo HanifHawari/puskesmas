@@ -81,7 +81,8 @@ include 'includes/header.php';
         <a href="<?= $link[1] ?>" target="_blank" rel="noopener noreferrer"
            class="tautan-card" id="tautan-<?= preg_replace('/[^a-z0-9]/', '-', strtolower($link[0])) ?>">
           <div class="tautan-card-icon" style="background:<?= $g['color'] ?>1a;color:<?= $g['color'] ?>;">
-            <i class="<?= $link[2] ?>"></i>
+            <img src="https://www.google.com/s2/favicons?domain=<?= parse_url($link[1], PHP_URL_HOST) ?>&sz=64" alt="<?= htmlspecialchars($link[0]) ?>" class="tautan-favicon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <i class="<?= $link[2] ?>" style="display:none"></i>
           </div>
           <div class="tautan-card-body">
             <h3 class="tautan-card-title"><?= htmlspecialchars($link[0]) ?></h3>
@@ -153,6 +154,11 @@ include 'includes/header.php';
   display: flex; align-items: center; justify-content: center;
   font-size: 1.2rem;
   flex-shrink: 0;
+  overflow: hidden;
+}
+.tautan-favicon {
+  width: 32px; height: 32px;
+  object-fit: contain;
 }
 .tautan-card-body { flex: 1; min-width: 0; }
 .tautan-card-title {
@@ -183,6 +189,33 @@ include 'includes/header.php';
   .tautan-group-header { flex-wrap: wrap; }
 }
 </style>
+
+<style>
+/* Hold/Press effect — desktop only */
+@media (hover: hover) {
+  .tautan-card.hold-active {
+    transform: translateY(-6px) scale(1.02) !important;
+    box-shadow: 0 12px 40px rgba(26,71,49,0.2) !important;
+    border-color: var(--clr-accent) !important;
+    transition: all 0.15s ease !important;
+  }
+  .tautan-card.hold-active .tautan-favicon {
+    transform: scale(1.2);
+    transition: transform 0.15s ease;
+  }
+}
+</style>
+
+<script>
+(function(){
+  if (!window.matchMedia('(hover: hover)').matches) return;
+  document.querySelectorAll('.tautan-card').forEach(function(card){
+    card.addEventListener('mousedown', function(){ card.classList.add('hold-active'); });
+    card.addEventListener('mouseup',   function(){ card.classList.remove('hold-active'); });
+    card.addEventListener('mouseleave',function(){ card.classList.remove('hold-active'); });
+  });
+})();
+</script>
 
 <?php include 'includes/footer.php'; ?>
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>
