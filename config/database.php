@@ -3,11 +3,20 @@
 // KONFIGURASI DATABASE - SIPP UPTD PUSKESMAS IPUH
 // ============================================================
 
-define('DB_HOST', getenv('MYSQL_HOST') ?: getenv('MYSQLHOST') ?: $_ENV['MYSQLHOST'] ?? $_SERVER['MYSQLHOST'] ?? 'mysql.railway.internal');
-define('DB_NAME', getenv('MYSQLDATABASE') ?: getenv('MYSQL_DATABASE') ?: $_ENV['MYSQLDATABASE'] ?? $_ENV['MYSQL_DATABASE'] ?? $_SERVER['MYSQLDATABASE'] ?? 'railway');
-define('DB_USER', getenv('MYSQL_USER') ?: getenv('MYSQLUSER') ?: $_ENV['MYSQLUSER'] ?? $_SERVER['MYSQLUSER'] ?? 'root');
-define('DB_PASS', getenv('MYSQLPASSWORD') ?: getenv('MYSQL_PASSWORD') ?: getenv('MYSQL_ROOT_PASSWORD') ?: $_ENV['MYSQLPASSWORD'] ?? $_SERVER['MYSQLPASSWORD'] ?? 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP');
-define('DB_PORT', getenv('MYSQL_PORT') ?: getenv('MYSQLPORT') ?: $_ENV['MYSQLPORT'] ?? $_SERVER['MYSQLPORT'] ?? '3306');
+$envHost = getenv('MYSQLHOST') ?: $_ENV['MYSQLHOST'] ?? 'mysql.railway.internal';
+if (strpos($envHost, '${{') !== false) $envHost = 'mysql.railway.internal';
+
+$envDb = getenv('MYSQLDATABASE') ?: $_ENV['MYSQLDATABASE'] ?? 'railway';
+if (strpos($envDb, '${{') !== false) $envDb = 'railway';
+
+$envPass = getenv('MYSQLPASSWORD') ?: $_ENV['MYSQLPASSWORD'] ?? 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
+if (strpos($envPass, '${{') !== false) $envPass = 'pOYFWyPDVSnlgLwXrwJhFvqiODauJXAP';
+
+define('DB_HOST', $envHost);
+define('DB_NAME', $envDb);
+define('DB_USER', 'root');
+define('DB_PASS', $envPass);
+define('DB_PORT', '3306');
 define('DB_CHARSET', 'utf8mb4');
 
 // Base URL (sesuaikan jika folder berbeda)
