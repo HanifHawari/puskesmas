@@ -22,3 +22,6 @@ Thumbs.db
 
 # Log files
 *.log
+
+# Ignore database sql files
+db/
