@@ -25,20 +25,6 @@
 - **Frontend**: HTML5, Vanilla CSS3, JavaScript.
 - **Lainnya**: PDO untuk koneksi database yang aman.
 
-## 📦 Panduan Instalasi (Lokal)
-
-1. Pastikan Anda menggunakan PHP versi 8.0 atau yang lebih baru.
-2. Buat database baru di MySQL dengan nama `sipp_puskesmas`.
-3. Import struktur database dari folder `db` (jika ada) ke database `sipp_puskesmas`.
-4. Buka `config/database.php` dan sesuaikan konfigurasi koneksi database jika diperlukan. Secara default sudah dikonfigurasi untuk lokal Laragon:
-   ```php
-   $envHost = '127.0.0.1';
-   $envDb   = 'sipp_puskesmas';
-   $envUser = 'root';
-   $envPass = '';
-   ```
-5. Akses website melalui browser Anda, contoh: `http://localhost/website SIPP/` (sesuaikan dengan nama folder).
-
 ## 🚀 Deployment
 
 Project ini sudah dikonfigurasi agar mudah di-deploy ke platform seperti **Railway** menggunakan file `nixpacks.toml` dan membaca variabel environment `DATABASE_URL` untuk koneksi PostgreSQL secara otomatis.
