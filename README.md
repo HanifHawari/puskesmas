@@ -27,21 +27,17 @@
 
 ## 📦 Panduan Instalasi (Lokal)
 
-1. Clone repositori ini ke dalam folder server lokal Anda (misal: `c:\laragon\www\`).
-   ```bash
-   git clone https://github.com/HanifHawari/puskesmas.git
-   ```
-2. Pastikan Anda menggunakan PHP versi 8.0 atau yang lebih baru.
-3. Buat database baru di MySQL dengan nama `sipp_puskesmas`.
-4. Import struktur database dari folder `db` (jika ada) ke database `sipp_puskesmas`.
-5. Buka `config/database.php` dan sesuaikan konfigurasi koneksi database jika diperlukan. Secara default sudah dikonfigurasi untuk lokal Laragon:
+1. Pastikan Anda menggunakan PHP versi 8.0 atau yang lebih baru.
+2. Buat database baru di MySQL dengan nama `sipp_puskesmas`.
+3. Import struktur database dari folder `db` (jika ada) ke database `sipp_puskesmas`.
+4. Buka `config/database.php` dan sesuaikan konfigurasi koneksi database jika diperlukan. Secara default sudah dikonfigurasi untuk lokal Laragon:
    ```php
    $envHost = '127.0.0.1';
    $envDb   = 'sipp_puskesmas';
    $envUser = 'root';
    $envPass = '';
    ```
-6. Akses website melalui browser Anda, contoh: `http://localhost/website SIPP/` (sesuaikan dengan nama folder).
+5. Akses website melalui browser Anda, contoh: `http://localhost/website SIPP/` (sesuaikan dengan nama folder).
 
 ## 🚀 Deployment
 
