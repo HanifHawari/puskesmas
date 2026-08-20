@@ -10,8 +10,8 @@ CREATE TABLE IF NOT EXISTS profil_puskesmas (
 
 INSERT INTO profil_puskesmas (key_name, value) VALUES
 ('nama',         'UPTD Puskesmas Ipuh'),
-('kepala',       'dr. Hendra Saputra, M.Kes'),
-('nip_kepala',   '197801012006041010'),
+('kepala',       'Dr.Jelius Hadinata'),
+('nip_kepala',   '198101152011011005'),
 ('alamat',       'Jl. Kesehatan No. 1, Ipuh, Kec. Ipuh, Kab. Mukomuko, Bengkulu 38763'),
 ('telp',         '(0737) 5210001'),
 ('email',        'puskesmas.ipuh@mukomukokab.go.id'),
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS tenaga_medis (
 );
 
 INSERT INTO tenaga_medis (nama, jabatan, spesialis, nip, poli_id, urutan) VALUES
-('dr. Hendra Saputra, M.Kes',  'Kepala Puskesmas / Dokter Umum', 'Kedokteran Keluarga', '197801012006041010', 1, 1),
+('Dr.Jelius Hadinata',  'Kepala Puskesmas / Dokter Umum', 'Kedokteran Keluarga', '198101152011011005', 1, 1),
 ('drg. Sari Dewi Lestari',     'Dokter Gigi',                    'Kedokteran Gigi',     '198503122010012015', 2, 2),
 ('dr. Rina Safitri',           'Dokter Umum',                    NULL,                  '199001052019022003', 4, 3),
 ('Bidan Nurhasanah, Amd.Keb',  'Bidan Koordinator',             'Kebidanan',           '198706142010012020', 3, 4),

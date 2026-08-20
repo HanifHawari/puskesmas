@@ -272,6 +272,10 @@
   .hero-stats  { justify-content: flex-start; }
 }
 
+@media (max-width: 768px) {
+  .hero-text { display: none; }
+}
+
 @media (max-width: 480px) {
   .hero-stats { gap: var(--space-xl); }
   .hero-cta { flex-direction: column; align-items: center; }

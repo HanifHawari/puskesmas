@@ -19,7 +19,7 @@ if ($dbUrl) {
     define('DB_DSN', "$scheme:host=$envHost;port=$envPort;dbname=$envDb");
 } else {
     // Lokal Laragon
-    $envHost = 'localhost';
+    $envHost = '127.0.0.1';
     $envDb   = 'sipp_puskesmas';
     $envUser = 'root';
     $envPass = '';
@@ -42,6 +42,7 @@ function getPDO(): PDO {
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES   => false,
+            PDO::ATTR_PERSISTENT         => true,
         ];
         try {
             $pdo = new PDO(DB_DSN, DB_USER, DB_PASS, $options);

@@ -198,7 +198,8 @@ $extraHead = <<<HTML
         overflow-x: auto !important;
         scroll-snap-type: x mandatory !important;
         gap: 1rem !important;
-        padding-bottom: 0.5rem !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 1.5rem !important;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
       }
@@ -381,7 +382,7 @@ include 'includes/header.php';
       <div class="org-chart">
         <div class="org-level">
           <div class="org-card head">
-            <div class="org-name"><?= htmlspecialchars($profil['kepala'] ?? 'dr. Hendra Saputra, M.Kes') ?></div>
+            <div class="org-name"><?= htmlspecialchars($profil['kepala'] ?? 'Dr.Jelius Hadinata') ?></div>
             <div class="org-role" style="color:rgba(255,255,255,0.7);">Kepala UPTD Puskesmas</div>
             <div style="margin-top:6px;font-size:0.7rem;color:rgba(255,255,255,0.6);">NIP: <?= htmlspecialchars($profil['nip_kepala'] ?? '-') ?></div>
           </div>
