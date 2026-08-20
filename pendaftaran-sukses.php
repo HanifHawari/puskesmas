@@ -12,7 +12,7 @@ if (!$noAntrian) {
     header('Location: pendaftaran.php');
     exit;
 }
-?>
+
 $pageTitle = 'Pendaftaran Berhasil SIPP UPTD Puskesmas Ipuh';
 $extraHead = <<<HTML
   <style>

@@ -13,7 +13,11 @@ $totalFasilitas = count(getAllFasilitas());
 $totalMedis = count(getAllTenagaMedis());
 $poliTersedia = array_filter($poli, fn($p) => $p['status'] === 'Buka');
 $pageTitle = 'Beranda SIPP UPTD Puskesmas Ipuh';
-$extraCss = ['css/hero.css', 'css/fasilitas.css?v=' . time()];
+$extraCss = [
+    'css/hero.css', 
+    'css/fasilitas.css?v=' . time(),
+    'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css'
+];
 include 'includes/header.php';
 ?>
 
@@ -124,104 +128,59 @@ if (pengumumanData && pengumumanData.length > 1) {
       <h2 class="section-title" id="galeri-title">Mengenal Puskesmas Ipuh</h2>
       <p class="section-subtitle">Fasilitas dan kegiatan pelayanan kesehatan UPTD Puskesmas Ipuh untuk masyarakat Kecamatan Ipuh.</p>
     </div>
-    <div class="galeri-carousel-wrap" id="galeriCarouselWrap">
-      <div class="galeri-track" id="galeriTrack">
-        <div class="galeri-slide active">
-          <div class="galeri-img-wrap">
-            <img src="assets/images/puskesmas1.jpg" alt="Tampak Depan Puskesmas Ipuh" loading="lazy">
-            <div class="galeri-overlay"><div class="galeri-caption"><i class="fas fa-hospital"></i><span>Tampak Depan Gedung Puskesmas Ipuh</span></div></div>
-          </div>
-        </div>
-        <div class="galeri-slide">
-          <div class="galeri-img-wrap">
-            <img src="assets/images/puskesmas2.jpg" alt="Ruang Pelayanan" loading="lazy">
-            <div class="galeri-overlay"><div class="galeri-caption"><i class="fas fa-stethoscope"></i><span>Ruang Pelayanan Pasien</span></div></div>
-          </div>
-        </div>
-        <div class="galeri-slide">
-          <div class="galeri-img-wrap">
-            <img src="assets/images/puskesmas3.jpg" alt="Kegiatan Puskesmas" loading="lazy">
-            <div class="galeri-overlay"><div class="galeri-caption"><i class="fas fa-heartbeat"></i><span>Kegiatan Pelayanan Kesehatan Masyarakat</span></div></div>
-          </div>
-        </div>
-        <div class="galeri-slide">
-          <div class="galeri-img-wrap">
-            <img src="assets/images/puskesmas4.jpg" alt="Fasilitas Puskesmas" loading="lazy">
-            <div class="galeri-overlay"><div class="galeri-caption"><i class="fas fa-bed"></i><span>Fasilitas Rawat Inap</span></div></div>
-          </div>
-        </div>
-        <div class="galeri-slide">
-          <div class="galeri-img-wrap">
-            <img src="assets/images/puskesmas5.jpg" alt="Tenaga Medis" loading="lazy">
-            <div class="galeri-overlay"><div class="galeri-caption"><i class="fas fa-user-md"></i><span>Tim Tenaga Kesehatan Puskesmas Ipuh</span></div></div>
-          </div>
-        </div>
+    <div class="splide" id="galeriSplide" aria-label="Galeri Puskesmas Ipuh">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="galeri-img-wrap">
+              <img src="assets/images/puskesmas1.jpg" alt="Tim Tenaga Medis & Pegawai Puskesmas Ipuh" loading="lazy">
+              <div class="galeri-overlay"><div class="galeri-caption"><i class="fas fa-users"></i><span>Tim Tenaga Medis & Pegawai Puskesmas Ipuh</span></div></div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="galeri-img-wrap">
+              <img src="assets/images/puskesmas2.jpg" alt="Ruang Pendaftaran & Informasi Rawat Inap" loading="lazy">
+              <div class="galeri-overlay"><div class="galeri-caption"><i class="fas fa-info-circle"></i><span>Ruang Pendaftaran & Informasi Rawat Inap</span></div></div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="galeri-img-wrap">
+              <img src="assets/images/puskesmas3.jpg" alt="Ruang Tindakan & Pelayanan Gawat Darurat (UGD)" loading="lazy">
+              <div class="galeri-overlay"><div class="galeri-caption"><i class="fas fa-heartbeat"></i><span>Ruang Tindakan & Pelayanan Gawat Darurat (UGD)</span></div></div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="galeri-img-wrap">
+              <img src="assets/images/puskesmas4.jpg" alt="Loket Pendaftaran & Pelayanan Pasien" loading="lazy">
+              <div class="galeri-overlay"><div class="galeri-caption"><i class="fas fa-clipboard-user"></i><span>Loket Pendaftaran & Pelayanan Pasien</span></div></div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="galeri-img-wrap">
+              <img src="assets/images/puskesmas5.jpg" alt="Pelayanan Konsultasi & Pengambilan Obat" loading="lazy">
+              <div class="galeri-overlay"><div class="galeri-caption"><i class="fas fa-pills"></i><span>Pelayanan Konsultasi & Pengambilan Obat</span></div></div>
+            </div>
+          </li>
+        </ul>
       </div>
-
-      <div class="galeri-dots" id="galeriDots" role="tablist" aria-label="Navigasi Galeri"></div>
     </div>
   </div>
 </section>
 
 <style>
-.galeri-carousel-wrap{position:relative;overflow:hidden;border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);background:var(--clr-gray-900);user-select:none;cursor:grab;}
-.galeri-carousel-wrap.grabbing{cursor:grabbing !important;}
-.galeri-track{display:flex;transition:transform 0.65s cubic-bezier(0.77,0,0.175,1);will-change:transform;}
-.galeri-slide{min-width:100%;position:relative;}
-.galeri-img-wrap{position:relative;overflow:hidden;height:clamp(260px,50vw,540px);}
+.galeri-img-wrap{position:relative;overflow:hidden;height:clamp(260px,50vw,540px);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);background:var(--clr-gray-900);}
 .galeri-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.8s ease;}
-.galeri-slide.active .galeri-img-wrap img{transform:scale(1.04);}
+.splide__slide.is-active .galeri-img-wrap img{transform:scale(1.04);}
 .galeri-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,28,20,.78) 0%,transparent 55%);display:flex;align-items:flex-end;padding:2rem;pointer-events:none;}
 .galeri-caption{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--font-heading);font-size:clamp(.9rem,2vw,1.15rem);font-weight:600;text-shadow:0 2px 8px rgba(0,0,0,.5);transform:translateY(12px);opacity:0;transition:all .5s ease .2s;}
-.galeri-slide.active .galeri-caption{transform:translateY(0);opacity:1;}
+.splide__slide.is-active .galeri-caption{transform:translateY(0);opacity:1;}
 .galeri-caption i{color:var(--clr-accent-light);font-size:1.1rem;flex-shrink:0;}
-.galeri-dots{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;}
-.galeri-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;border:none;padding:0;transition:all .3s ease;}
-.galeri-dot.active{background:#fff;width:28px;border-radius:4px;}
+.splide__pagination {bottom: 1.5rem;}
+.splide__pagination__page {background: rgba(255,255,255,.45); transition: all 0.3s ease;}
+.splide__pagination__page.is-active {background: #fff; transform: scale(1.2);}
 @media(max-width:768px){.galeri-overlay{padding:1.25rem;}}
 @media(max-width:480px){.galeri-img-wrap{height:220px;}.galeri-overlay{padding:1rem;}}
 </style>
-<script>
-(function(){
-  const track=document.getElementById('galeriTrack');
-  const slides=track?[...track.querySelectorAll('.galeri-slide')]:[];
-  const dotsWrap=document.getElementById('galeriDots');
-  if(!slides.length)return;
-  let current=0,autoTimer=null;
-  const DELAY=2500;
-  slides.forEach((_,i)=>{
-    const dot=document.createElement('button');
-    dot.className='galeri-dot'+(i===0?' active':'');
-    dot.setAttribute('role','tab');
-    dot.setAttribute('aria-label','Slide '+(i+1));
-    dot.addEventListener('click',()=>goTo(i));
-    dotsWrap.appendChild(dot);
-  });
-  function updateUI(){
-    track.style.transform=`translateX(-${current*100}%)`;
-    slides.forEach((s,i)=>s.classList.toggle('active',i===current));
-    [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('active',i===current));
-  }
-  function goTo(idx){current=(idx+slides.length)%slides.length;updateUI();restartAuto();}
-  function next(){goTo(current+1);}
-  function prev(){goTo(current-1);}
-  function startAuto(){autoTimer=setInterval(next,DELAY);}
-  function restartAuto(){clearInterval(autoTimer);startAuto();}
-  // Touch & Mouse support
-  let startX=0, isDown=false, isDragged=false;
-  const wrap=document.getElementById('galeriCarouselWrap');
-  wrap.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;},{passive:true});
-  wrap.addEventListener('touchend',e=>{const diff=startX-e.changedTouches[0].clientX;if(Math.abs(diff)>40)diff>0?next():prev();});
-  
-  wrap.addEventListener('mousedown',e=>{isDown=true;isDragged=false;startX=e.clientX;wrap.classList.add('grabbing');});
-  wrap.addEventListener('mousemove',e=>{if(!isDown)return;isDragged=true;e.preventDefault();});
-  wrap.addEventListener('mouseup',e=>{if(!isDown)return;isDown=false;wrap.classList.remove('grabbing');const diff=startX-e.clientX;if(Math.abs(diff)>40)diff>0?next():prev();});
-  wrap.addEventListener('mouseleave',()=>{if(isDown){isDown=false;wrap.classList.remove('grabbing');}});
-  wrap.addEventListener('dragstart',e=>{e.preventDefault();});
-  wrap.addEventListener('click',e=>{if(isDragged){e.preventDefault();e.stopPropagation();}});
-  updateUI();startAuto();
-})();
-</script>
 
 <!-- ============================================================
      TAUTAN TERKAIT — LOGO CAROUSEL
@@ -235,78 +194,77 @@ if (pengumumanData && pengumumanData.length > 1) {
     </div>
 
     <!-- Logo Carousel -->
-    <div class="tautan-carousel-wrap" id="tautanCarouselWrap">
-      <div class="tautan-track" id="tautanTrack">
+    <div class="splide" id="tautanSplide" aria-label="Tautan Terkait">
+      <div class="splide__track" style="padding-bottom:1rem; padding-top:1rem;">
+        <ul class="splide__list">
 
-        <div class="tautan-slide">
-          <a href="https://www.kemkes.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-kemenkes">
-            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=kemkes.go.id&sz=128" alt="Kemenkes RI" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-hospital"></i></div></div>
-            <div class="tautan-logo-name">Kementerian Kesehatan RI</div>
-            <div class="tautan-logo-url">kemkes.go.id</div>
-          </a>
-        </div>
+          <li class="splide__slide">
+            <a href="https://www.kemkes.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-kemenkes">
+              <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=kemkes.go.id&sz=128" alt="Kemenkes RI" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-hospital"></i></div></div>
+              <div class="tautan-logo-name">Kementerian Kesehatan RI</div>
+              <div class="tautan-logo-url">kemkes.go.id</div>
+            </a>
+          </li>
 
-        <div class="tautan-slide">
-          <a href="https://mukomukokab.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-mukomuko">
-            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=mukomukokab.go.id&sz=128" alt="Pemkab Mukomuko" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-building-columns"></i></div></div>
-            <div class="tautan-logo-name">Pemkab Mukomuko</div>
-            <div class="tautan-logo-url">mukomukokab.go.id</div>
-          </a>
-        </div>
+          <li class="splide__slide">
+            <a href="https://mukomukokab.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-mukomuko">
+              <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=mukomukokab.go.id&sz=128" alt="Pemkab Mukomuko" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-building-columns"></i></div></div>
+              <div class="tautan-logo-name">Pemkab Mukomuko</div>
+              <div class="tautan-logo-url">mukomukokab.go.id</div>
+            </a>
+          </li>
 
-        <div class="tautan-slide">
-          <a href="https://www.bpjs-kesehatan.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-bpjs">
-            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=bpjs-kesehatan.go.id&sz=128" alt="BPJS Kesehatan" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-id-card"></i></div></div>
-            <div class="tautan-logo-name">BPJS Kesehatan</div>
-            <div class="tautan-logo-url">bpjs-kesehatan.go.id</div>
-          </a>
-        </div>
+          <li class="splide__slide">
+            <a href="https://www.bpjs-kesehatan.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-bpjs">
+              <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=bpjs-kesehatan.go.id&sz=128" alt="BPJS Kesehatan" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none"><i class="fas fa-id-card"></i></div></div>
+              <div class="tautan-logo-name">BPJS Kesehatan</div>
+              <div class="tautan-logo-url">bpjs-kesehatan.go.id</div>
+            </a>
+          </li>
 
-        <div class="tautan-slide">
-          <a href="https://satusehat.kemkes.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-satusehat">
-            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=satusehat.kemkes.go.id&sz=128" alt="SatuSehat Kemenkes" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#00a86b,#007a4f)"><i class="fas fa-shield-heart"></i></div></div>
-            <div class="tautan-logo-name">SatuSehat Kemenkes</div>
-            <div class="tautan-logo-url">satusehat.kemkes.go.id</div>
-          </a>
-        </div>
+          <li class="splide__slide">
+            <a href="https://satusehat.kemkes.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-satusehat">
+              <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=satusehat.kemkes.go.id&sz=128" alt="SatuSehat Kemenkes" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#00a86b,#007a4f)"><i class="fas fa-shield-heart"></i></div></div>
+              <div class="tautan-logo-name">SatuSehat Kemenkes</div>
+              <div class="tautan-logo-url">satusehat.kemkes.go.id</div>
+            </a>
+          </li>
 
-        <div class="tautan-slide">
-          <a href="https://bengkuluprov.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-bengkulu">
-            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=bengkuluprov.go.id&sz=128" alt="Pemprov Bengkulu" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#c0392b,#922b21)"><i class="fas fa-map-location-dot"></i></div></div>
-            <div class="tautan-logo-name">Pemprov Bengkulu</div>
-            <div class="tautan-logo-url">bengkuluprov.go.id</div>
-          </a>
-        </div>
+          <li class="splide__slide">
+            <a href="https://bengkuluprov.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-bengkulu">
+              <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=bengkuluprov.go.id&sz=128" alt="Pemprov Bengkulu" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#c0392b,#922b21)"><i class="fas fa-map-location-dot"></i></div></div>
+              <div class="tautan-logo-name">Pemprov Bengkulu</div>
+              <div class="tautan-logo-url">bengkuluprov.go.id</div>
+            </a>
+          </li>
 
-        <div class="tautan-slide">
-          <a href="https://www.lapor.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-lapor">
-            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=lapor.go.id&sz=128" alt="Layanan LAPOR!" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#e67e22,#ca6f1e)"><i class="fas fa-comments"></i></div></div>
-            <div class="tautan-logo-name">Layanan LAPOR!</div>
-            <div class="tautan-logo-url">lapor.go.id</div>
-          </a>
-        </div>
+          <li class="splide__slide">
+            <a href="https://www.lapor.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-lapor">
+              <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=lapor.go.id&sz=128" alt="Layanan LAPOR!" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#e67e22,#ca6f1e)"><i class="fas fa-comments"></i></div></div>
+              <div class="tautan-logo-name">Layanan LAPOR!</div>
+              <div class="tautan-logo-url">lapor.go.id</div>
+            </a>
+          </li>
 
-        <div class="tautan-slide">
-          <a href="https://data.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-datago">
-            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=data.go.id&sz=128" alt="Satu Data Indonesia" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#2980b9,#1a5276)"><i class="fas fa-database"></i></div></div>
-            <div class="tautan-logo-name">Portal Satu Data Indonesia</div>
-            <div class="tautan-logo-url">data.go.id</div>
-          </a>
-        </div>
+          <li class="splide__slide">
+            <a href="https://data.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-datago">
+              <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=data.go.id&sz=128" alt="Satu Data Indonesia" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#2980b9,#1a5276)"><i class="fas fa-database"></i></div></div>
+              <div class="tautan-logo-name">Portal Satu Data Indonesia</div>
+              <div class="tautan-logo-url">data.go.id</div>
+            </a>
+          </li>
 
-        <div class="tautan-slide">
-          <a href="https://dukcapil.kemendagri.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-dukcapil">
-            <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=kemendagri.go.id&sz=128" alt="Dukcapil Kemendagri" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#7d3c98,#6c3483)"><i class="fas fa-id-badge"></i></div></div>
-            <div class="tautan-logo-name">Dukcapil Kemendagri</div>
-            <div class="tautan-logo-url">kemendagri.go.id</div>
-          </a>
-        </div>
+          <li class="splide__slide">
+            <a href="https://dukcapil.kemendagri.go.id" target="_blank" rel="noopener" class="tautan-logo-card" id="link-dukcapil">
+              <div class="tautan-logo-img"><img src="https://www.google.com/s2/favicons?domain=kemendagri.go.id&sz=128" alt="Dukcapil Kemendagri" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="tautan-logo-fallback" style="display:none;background:linear-gradient(135deg,#7d3c98,#6c3483)"><i class="fas fa-id-badge"></i></div></div>
+              <div class="tautan-logo-name">Dukcapil Kemendagri</div>
+              <div class="tautan-logo-url">kemendagri.go.id</div>
+            </a>
+          </li>
 
-      </div><!-- /.tautan-track -->
-
-
-    </div><!-- /.tautan-carousel-wrap -->
-
+        </ul>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -315,29 +273,6 @@ if (pengumumanData && pengumumanData.length > 1) {
 /* ============================================================
    TAUTAN LOGO CAROUSEL
    ============================================================ */
-.tautan-carousel-wrap {
-  position: relative;
-  overflow: hidden;
-  cursor: grab;
-  user-select: none;
-}
-.tautan-carousel-wrap.grabbing {
-  cursor: grabbing !important;
-}
-.tautan-carousel-wrap.grabbing a {
-  pointer-events: none;
-}
-.tautan-track {
-  display: flex;
-  transition: transform 0.55s cubic-bezier(0.77, 0, 0.175, 1);
-  will-change: transform;
-  gap: 0;
-}
-.tautan-slide {
-  min-width: calc(100% / 4);
-  padding: 0 0.5rem;
-  box-sizing: border-box;
-}
 .tautan-logo-card {
   display: flex;
   flex-direction: column;
@@ -389,71 +324,7 @@ if (pengumumanData && pengumumanData.length > 1) {
   color: var(--clr-accent);
   font-weight: 500;
 }
-@media (max-width: 1024px) { .tautan-slide { min-width: calc(100% / 3); } }
-@media (max-width: 768px)  { .tautan-slide { min-width: calc(100% / 2); } }
-@media (max-width: 480px)  { .tautan-slide { min-width: 100%; } }
 </style>
-
-<script>
-(function(){
-  const track    = document.getElementById('tautanTrack');
-  const slides   = track ? [...track.querySelectorAll('.tautan-slide')] : [];
-  if (!slides.length) return;
-
-  // Visible slides count based on viewport
-  function visibleCount() {
-    const w = window.innerWidth;
-    if (w <= 480)  return 1;
-    if (w <= 768)  return 2;
-    if (w <= 1024) return 3;
-    return 4;
-  }
-
-  let current = 0, autoTimer = null;
-  const DELAY = 2000;
-  const total = slides.length;
-
-  function maxIdx() { return Math.max(0, total - visibleCount()); }
-
-  function updateUI() {
-    const pct = (current / total) * 100;
-    track.style.transform = `translateX(-${pct}%)`;
-  }
-  function goTo(idx) { current = Math.min(Math.max(0, idx), maxIdx()); updateUI(); restartAuto(); }
-  function next() { current >= maxIdx() ? goTo(0) : goTo(current + 1); }
-  function prev() { current <= 0 ? goTo(maxIdx()) : goTo(current - 1); }
-  function startAuto()   { autoTimer = setInterval(next, DELAY); }
-  function restartAuto() { clearInterval(autoTimer); startAuto(); }
-
-  // Touch & Mouse support
-  let startX = 0, isDown = false, isDragged = false;
-  const wrap = document.getElementById('tautanCarouselWrap');
-  
-  wrap.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-  wrap.addEventListener('touchend',   e => {
-    const diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
-  });
-  
-  wrap.addEventListener('mousedown', e => { isDown = true; isDragged = false; startX = e.clientX; wrap.classList.add('grabbing'); });
-  wrap.addEventListener('mousemove', e => { if (!isDown) return; isDragged = true; e.preventDefault(); });
-  wrap.addEventListener('mouseup', e => {
-    if (!isDown) return;
-    isDown = false; wrap.classList.remove('grabbing');
-    const diff = startX - e.clientX;
-    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
-  });
-  wrap.addEventListener('mouseleave', () => {
-    if (isDown) { isDown = false; wrap.classList.remove('grabbing'); }
-  });
-  wrap.addEventListener('dragstart', e => { e.preventDefault(); });
-  wrap.addEventListener('click', e => { if (isDragged) { e.preventDefault(); e.stopPropagation(); } });
-
-  window.addEventListener('resize', updateUI);
-  updateUI();
-  startAuto();
-})();
-</script>
 
 
 <!-- TENTANG KAMI -->
@@ -564,6 +435,40 @@ if (pengumumanData && pengumumanData.length > 1) {
 
 <?php include 'includes/footer.php'; ?>
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (document.getElementById('galeriSplide')) {
+      new Splide('#galeriSplide', {
+        type: 'loop',
+        perPage: 1,
+        autoplay: true,
+        interval: 3000,
+        pagination: true,
+        arrows: false,
+        drag: true,
+      }).mount();
+    }
+
+    if (document.getElementById('tautanSplide')) {
+      new Splide('#tautanSplide', {
+        type: 'loop',
+        perPage: 4,
+        gap: '1.25rem',
+        autoplay: true,
+        interval: 2500,
+        pagination: false,
+        arrows: false,
+        drag: true,
+        breakpoints: {
+          1024: { perPage: 3 },
+          768:  { perPage: 2 },
+          480:  { perPage: 1 }
+        }
+      }).mount();
+    }
+  });
+</script>
 <script src="js/main.js?v=<?= time() ?>"></script>
 </body>
 </html>
