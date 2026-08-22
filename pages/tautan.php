@@ -2,14 +2,14 @@
 // ============================================================
 // TAUTAN TERKAIT — SIPP UPTD PUSKESMAS IPUH
 // ============================================================
-require_once 'includes/functions.php';
+require_once '../includes/functions.php';
 $activePage = '';
 $pageTitle = 'Tautan Terkait - SIPP UPTD Puskesmas Ipuh';
 $metaDesc = 'Tautan terkait instansi pemerintah, kesehatan, dan layanan publik yang berhubungan dengan UPTD Puskesmas Ipuh.';
-include 'includes/header.php';
+include '../includes/header.php';
 ?>
 
-<?php include 'includes/navbar.php'; ?>
+<?php include '../includes/navbar.php'; ?>
 
 <!-- Page Header -->
 <div class="page-header">
@@ -217,8 +217,8 @@ include 'includes/header.php';
 })();
 </script>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

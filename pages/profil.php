@@ -2,7 +2,7 @@
 // ============================================================
 // PROFIL & MAKLUMAT — SIPP UPTD PUSKESMAS IPUH
 // ============================================================
-require_once 'includes/functions.php';
+require_once '../includes/functions.php';
 
 $activePage  = 'profil';
 $profil      = getProfil();
@@ -10,7 +10,7 @@ $tenaga      = getAllTenagaMedis();
 $poli        = getAllPoli();
 $pageTitle = 'Profil & Maklumat SIPP UPTD Puskesmas Ipuh';
 $metaDesc = 'Profil dan Maklumat Pelayanan UPTD Puskesmas Ipuh Visi, misi, struktur organisasi, dan komitmen layanan publik.';
-$extraCss = ['css/fasilitas.css'];
+$extraCss = ['../css/fasilitas.css'];
 $extraHead = <<<HTML
   <style>
     /* ---- Tab Navigation ------------------------------------ */
@@ -220,10 +220,10 @@ $extraHead = <<<HTML
     }
   </style>
 HTML;
-include 'includes/header.php';
+include '../includes/header.php';
 ?>
 
-<?php include 'includes/navbar.php'; ?>
+<?php include '../includes/navbar.php'; ?>
 
 <!-- Page Header -->
 <div class="page-header">
@@ -529,7 +529,7 @@ include 'includes/header.php';
     <div class="tab-pane" id="maklumat" data-tab-pane="maklumat" id="tab-maklumat" role="tabpanel" aria-labelledby="btn-maklumat">
       <div class="maklumat-box">
         <div style="width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;overflow:hidden;padding:6px;">
-          <img src="assets/logo.png" alt="Logo Puskesmas Ipuh" style="width:100%;height:100%;object-fit:contain;">
+          <img src="../assets/logo.png" alt="Logo Puskesmas Ipuh" style="width:100%;height:100%;object-fit:contain;">
         </div>
         <div class="maklumat-title">Maklumat Pelayanan</div>
         <div class="maklumat-subtitle">UPTD Puskesmas Ipuh  Kab. Mukomuko, Bengkulu</div>
@@ -557,7 +557,7 @@ include 'includes/header.php';
         </div>
 
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-          <a href="assets/SK%20Maklumat%20Pelayanan.pdf" target="_blank" class="btn btn-white" id="download-maklumat-btn">
+          <a href="../assets/SK%20Maklumat%20Pelayanan.pdf" target="_blank" class="btn btn-white" id="download-maklumat-btn">
             <i class="fas fa-download"></i> Unduh SK Maklumat (PDF)
           </a>
           <a href="pengaduan.php" class="btn" style="border:2px solid rgba(255,255,255,0.4);color:white;" id="maklumat-pengaduan-btn">
@@ -616,11 +616,11 @@ include 'includes/header.php';
   </div><!-- /.container -->
 </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
 
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 <script>
 // Activate tab from URL hash
 document.addEventListener('DOMContentLoaded', () => {

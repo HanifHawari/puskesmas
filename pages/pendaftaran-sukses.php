@@ -2,7 +2,7 @@
 // ============================================================
 // HALAMAN SUKSES PENDAFTARAN — SIPP UPTD PUSKESMAS IPUH
 // ============================================================
-require_once 'includes/functions.php';
+require_once '../includes/functions.php';
 
 $activePage  = 'pendaftaran';
 $noAntrian   = htmlspecialchars($_GET['no']   ?? '');
@@ -109,10 +109,10 @@ $extraHead = <<<HTML
     }
   </style>
 HTML;
-include 'includes/header.php';
+include '../includes/header.php';
 ?>
 
-<?php include 'includes/navbar.php'; ?>
+<?php include '../includes/navbar.php'; ?>
 
 <main style="padding-top: var(--navbar-height);">
   <div class="success-wrapper">
@@ -176,7 +176,7 @@ include 'includes/header.php';
   </div>
 </main>
 
-<?php include 'includes/footer.php'; ?>
-<script src="js/main.js"></script>
+<?php include '../includes/footer.php'; ?>
+<script src="../js/main.js"></script>
 </body>
 </html>

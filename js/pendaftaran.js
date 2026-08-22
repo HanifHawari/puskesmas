@@ -191,7 +191,7 @@ function updateKuota() {
 
   if (!poliId || !tgl) return;
 
-  fetch(`process/get_kuota.php?poli_id=${poliId}&tgl=${tgl}`)
+  fetch(`../process/get_kuota.php?poli_id=${poliId}&tgl=${tgl}`)
     .then(r => r.json())
     .then(data => {
       const kuotaPagi  = document.getElementById('kuota-pagi');

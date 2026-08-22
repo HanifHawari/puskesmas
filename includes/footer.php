@@ -15,7 +15,7 @@ $tahun  = date('Y');
       <!-- Brand Column -->
       <div class="footer-brand">
         <a href="index.php" class="footer-logo">
-          <img src="assets/logo.png" alt="Logo Puskesmas Ipuh">
+          <img src="../assets/logo.png" alt="Logo Puskesmas Ipuh">
           <div class="footer-logo-text">
             <span class="logo-title">PUSKESMAS IPUH</span>
             <span class="logo-sub">KAB. MUKOMUKO</span>
@@ -93,7 +93,7 @@ $tahun  = date('Y');
     <!-- Footer Bottom -->
     <div class="footer-bottom">
       <span>
-        &copy; <?= $tahun ?> UPTD Puskesmas Ipuh &mdash; Kabupaten Mukomuko, Bengkulu.
+        &copy; <?= $tahun ?> UPTD Puskesmas Ipuh Kabupaten Mukomuko, Bengkulu.
         Hak cipta dilindungi.
       </span>
     </div>

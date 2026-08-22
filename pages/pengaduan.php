@@ -2,7 +2,7 @@
 // ============================================================
 // PENGADUAN MASYARAKAT — SIPP UPTD PUSKESMAS IPUH
 // ============================================================
-require_once 'includes/functions.php';
+require_once '../includes/functions.php';
 $activePage = 'pengaduan';
 
 $kategoriList = [
@@ -124,10 +124,10 @@ $extraHead = <<<HTML
     .timeline-item.active .timeline-label { color: var(--clr-primary); }
   </style>
 HTML;
-include 'includes/header.php';
+include '../includes/header.php';
 ?>
 
-<?php include 'includes/navbar.php'; ?>
+<?php include '../includes/navbar.php'; ?>
 
 <!-- Page Header -->
 <div class="page-header">
@@ -168,7 +168,7 @@ include 'includes/header.php';
         </div>
       </div>
 
-      <form id="pengaduanForm" action="process/process_pengaduan.php" method="POST" enctype="multipart/form-data" novalidate>
+      <form id="pengaduanForm" action="../process/process_pengaduan.php" method="POST" enctype="multipart/form-data" novalidate>
 
         <!-- Identitas (Opsional) -->
         <div class="card" style="margin-bottom:1.5rem;">
@@ -327,10 +327,10 @@ include 'includes/header.php';
   </div><!-- /.container -->
 </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 <script>
 // ---- View Toggle ----------------------------------------
 document.querySelectorAll('.view-btn').forEach(btn => {
@@ -446,7 +446,7 @@ document.getElementById('cariBtn')?.addEventListener('click', () => {
     return;
   }
 
-  fetch(`process/get_pengaduan.php?kode=${encodeURIComponent(kode)}`)
+  fetch(`../process/get_pengaduan.php?kode=${encodeURIComponent(kode)}`)
     .then(r => r.json())
     .then(data => {
       document.getElementById('trackingResult').classList.remove('show');

@@ -2,7 +2,7 @@
 // ============================================================
 // PENDAFTARAN ONLINE — SIPP UPTD PUSKESMAS IPUH
 // ============================================================
-require_once 'includes/functions.php';
+require_once '../includes/functions.php';
 
 $activePage = 'pendaftaran';
 $poli       = getAllPoli();
@@ -107,10 +107,10 @@ $extraHead = <<<HTML
     }
   </style>
 HTML;
-include 'includes/header.php';
+include '../includes/header.php';
 ?>
 
-<?php include 'includes/navbar.php'; ?>
+<?php include '../includes/navbar.php'; ?>
 
 <!-- Page Header -->
 <div class="page-header">
@@ -160,7 +160,7 @@ include 'includes/header.php';
     </div>
 
     <!-- Form -->
-    <form id="pendaftaranForm" action="process/process_pendaftaran.php" method="POST" novalidate>
+    <form id="pendaftaranForm" action="../process/process_pendaftaran.php" method="POST" novalidate>
       <input type="hidden" name="csrf_token" value="<?= bin2hex(random_bytes(16)) ?>">
 
       <!-- ======== STEP 1: DATA DIRI ======== -->
@@ -419,10 +419,10 @@ include 'includes/header.php';
   </div><!-- /.container -->
 </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-<script src="js/main.js"></script>
-<script src="js/pendaftaran.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pendaftaran.js"></script>
 </body>
 </html>

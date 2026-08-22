@@ -11,7 +11,7 @@ $activePage = $activePage ?? '';
 
     <!-- Logo -->
     <a href="index.php" class="navbar-logo">
-      <img src="assets/logo.png" alt="Logo UPTD Puskesmas Ipuh">
+      <img src="../assets/logo.png" alt="Logo UPTD Puskesmas Ipuh">
       <div class="navbar-logo-text">
         <span class="logo-title">PUSKESMAS IPUH</span>
         <span class="logo-sub">KAB. MUKOMUKO</span>

@@ -2,7 +2,7 @@
 // ============================================================
 // INFORMASI FASILITAS — SIPP UPTD PUSKESMAS IPUH
 // ============================================================
-require_once 'includes/functions.php';
+require_once '../includes/functions.php';
 
 $activePage  = 'fasilitas';
 $poli        = getAllPoli();
@@ -18,11 +18,11 @@ foreach ($fasilitas as $f) {
 $lastUpdate = date('H:i \W\I\B, d M Y');
 $pageTitle = 'Info Fasilitas SIPP UPTD Puskesmas Ipuh';
 $metaDesc = 'Informasi ketersediaan fasilitas, poli, dan layanan UPTD Puskesmas Ipuh secara real-time.';
-$extraCss = ['css/fasilitas.css?v=' . time()];
-include 'includes/header.php';
+$extraCss = ['../css/fasilitas.css?v=' . time()];
+include '../includes/header.php';
 ?>
 
-<?php include 'includes/navbar.php'; ?>
+<?php include '../includes/navbar.php'; ?>
 
 <!-- Page Header -->
 <div class="page-header">
@@ -228,10 +228,10 @@ include 'includes/header.php';
   </div><!-- /.container -->
 </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-<script src="js/main.js?v=<?= time() ?>"></script>
-<script src="js/fasilitas.js"></script>
+<script src="../js/main.js?v=<?= time() ?>"></script>
+<script src="../js/fasilitas.js"></script>
 </body>
 </html>

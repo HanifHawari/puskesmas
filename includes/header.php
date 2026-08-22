@@ -17,12 +17,12 @@ $extraCss = $extraCss ?? [];
   <title><?= htmlspecialchars($pageTitle) ?></title>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=1.0">
-  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="../css/style.css?v=1.0">
+  <link rel="stylesheet" href="../css/navbar.css">
   <?php foreach ($extraCss as $css): ?>
   <link rel="stylesheet" href="<?= htmlspecialchars($css) ?>">
   <?php endforeach; ?>
-  <link rel="stylesheet" href="css/footer.css?v=1.0">
+  <link rel="stylesheet" href="../css/footer.css?v=1.0">
   <?php if(isset($extraHead)) echo $extraHead; ?>
 </head>
 <body>
