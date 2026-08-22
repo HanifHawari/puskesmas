@@ -696,7 +696,9 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     overflow-x: auto !important;
     overflow-y: hidden !important;
     scroll-snap-type: x mandatory !important;
-    gap: 1rem !important;
+    gap: calc(100vw - 260px) !important;
+    padding-left: calc(50vw - 130px - var(--space-lg)) !important;
+    padding-right: calc(50vw - 130px - var(--space-lg)) !important;
     padding-top: 0.5rem !important;
     padding-bottom: 1.5rem !important;
     -webkit-overflow-scrolling: touch;
@@ -704,8 +706,9 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   }
   .quick-nav-grid::-webkit-scrollbar { display: none; }
   .quick-nav-card {
-    flex: 0 0 85% !important;
-    min-width: 85% !important;
+    flex: 0 0 260px !important;
+    min-width: 260px !important;
+    max-width: 260px !important;
     scroll-snap-align: center !important;
   }
   .steps { gap: 0; }

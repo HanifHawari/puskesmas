@@ -1,7 +1,7 @@
 # SIPP UPTD Puskesmas Ipuh 🏥
 
 <div align="center">
-  <img src="assets/logo.png" alt="Logo SIPP Puskesmas Ipuh" width="150" />
+  <img src="assets/images/logo.png" alt="Logo SIPP Puskesmas Ipuh" width="150" />
 </div>
 
 <br>

@@ -87,28 +87,28 @@ if (pengumumanData && pengumumanData.length > 1) {
       <a href="profil.php" class="quick-nav-card card-bg-1 reveal" id="nav-profil">
         <div class="poli-card-header">
           <div class="poli-card-icon"><i class="fas fa-building-columns"></i></div>
-          <div class="poli-card-meta"><h3 class="poli-card-name">Profil &amp; Maklumat</h3></div>
+          <div class="poli-card-meta"><h3 class="poli-card-name">Profil &amp;<br>Maklumat</h3></div>
         </div>
         <div class="poli-card-info"><p style="font-size:0.85rem;color:var(--clr-gray-600);line-height:1.5;margin:0;">Visi, misi, struktur organisasi, dan maklumat pelayanan resmi Puskesmas Ipuh.</p></div>
       </a>
       <a href="pendaftaran.php" class="quick-nav-card card-bg-2 reveal" id="nav-pendaftaran">
         <div class="poli-card-header">
           <div class="poli-card-icon"><i class="fas fa-clipboard-list"></i></div>
-          <div class="poli-card-meta"><h3 class="poli-card-name">Pendaftaran Online</h3></div>
+          <div class="poli-card-meta"><h3 class="poli-card-name">Pendaftaran<br>Online</h3></div>
         </div>
         <div class="poli-card-info"><p style="font-size:0.85rem;color:var(--clr-gray-600);line-height:1.5;margin:0;">Daftar antrian poli tanpa perlu datang langsung. Hemat waktu Anda.</p></div>
       </a>
       <a href="pengaduan.php" class="quick-nav-card card-bg-3 reveal" id="nav-pengaduan">
         <div class="poli-card-header">
           <div class="poli-card-icon"><i class="fas fa-comments"></i></div>
-          <div class="poli-card-meta"><h3 class="poli-card-name">Pengaduan Masyarakat</h3></div>
+          <div class="poli-card-meta"><h3 class="poli-card-name">Pengaduan<br>Masyarakat</h3></div>
         </div>
         <div class="poli-card-info"><p style="font-size:0.85rem;color:var(--clr-gray-600);line-height:1.5;margin:0;">Sampaikan keluhan, saran, atau laporan dengan mudah. Kami siap mendengar.</p></div>
       </a>
       <a href="fasilitas.php" class="quick-nav-card card-bg-4 reveal" id="nav-fasilitas">
         <div class="poli-card-header">
           <div class="poli-card-icon"><i class="fas fa-hospital-user"></i></div>
-          <div class="poli-card-meta"><h3 class="poli-card-name">Info Fasilitas</h3></div>
+          <div class="poli-card-meta"><h3 class="poli-card-name">Info<br>Fasilitas</h3></div>
         </div>
         <div class="poli-card-info"><p style="font-size:0.85rem;color:var(--clr-gray-600);line-height:1.5;margin:0;">Cek status poli, ketersediaan tempat tidur, dan fasilitas secara real-time.</p></div>
       </a>
@@ -361,21 +361,78 @@ if (pengumumanData && pengumumanData.length > 1) {
   </div>
 </section>
 
-<!-- CTA SECTION -->
-<section class="section" aria-label="Ajakan Pendaftaran">
+<!-- ULASAN PASIEN CAROUSEL -->
+<section class="section section-alt" id="ulasan" aria-label="Ulasan Pasien">
   <div class="container">
-    <div style="text-align:center;max-width:700px;margin:0 auto;">
-      <span class="section-label"><i class="fas fa-calendar-check"></i> Mulai Sekarang</span>
-      <h2 class="section-title" style="margin-bottom:1rem;">Butuh Layanan Kesehatan?</h2>
+    <div class="section-header">
+      <span class="section-label"><i class="fas fa-star" style="color:#F59E0B;"></i> Ulasan Pasien</span>
+      <h2 class="section-title">Apa Kata Mereka?</h2>
+      <p class="section-subtitle">Ulasan dan pengalaman nyata masyarakat saat berobat di UPTD Puskesmas Ipuh.</p>
+    </div>
+    
+    <div class="splide" id="ulasanSplide" aria-label="Kumpulan Ulasan">
+      <div class="splide__track" style="padding-bottom:1rem; padding-top:1rem;">
+        <ul class="splide__list">
+          
+          <li class="splide__slide">
+            <div class="ulasan-card">
+              <div class="ulasan-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="ulasan-text">"Pelayanan sangat ramah dan dokter menjelaskan dengan detail. Ruang tunggu bersih dan antrean teratur. Sangat membantu warga Ipuh."</p>
+              <div class="ulasan-author">
+                <div class="ulasan-avatar"><i class="fas fa-user"></i></div>
+                <div class="ulasan-name">Bu****n</div>
+              </div>
+            </div>
+          </li>
 
-      <p style="color:var(--clr-gray-600);font-size:1.05rem;line-height:1.7;margin-bottom:2rem;">Daftar antrian online sekarang dan hindari antrian panjang. Cukup beberapa menit dari rumah Anda.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="pendaftaran.php" class="btn btn-primary btn-lg" id="cta-daftar-btn"><i class="fas fa-clipboard-list"></i> Daftar Online Sekarang</a>
-        <a href="pengaduan.php" class="btn btn-outline btn-lg" id="cta-pengaduan-btn"><i class="fas fa-comments"></i> Sampaikan Pengaduan</a>
+          <li class="splide__slide">
+            <div class="ulasan-card">
+              <div class="ulasan-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+              <p class="ulasan-text">"Puskesmas sudah sangat modern, pendaftaran bisa online jadi tidak perlu antre dari subuh. Semoga pelayanannya dipertahankan terus."</p>
+              <div class="ulasan-author">
+                <div class="ulasan-avatar"><i class="fas fa-user"></i></div>
+                <div class="ulasan-name">Si****i</div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="splide__slide">
+            <div class="ulasan-card">
+              <div class="ulasan-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="ulasan-text">"Cepat tanggap saat ada kondisi darurat malam hari. Petugas IGD berjaga 24 jam dan sangat kooperatif. Terima kasih banyak."</p>
+              <div class="ulasan-author">
+                <div class="ulasan-avatar"><i class="fas fa-user"></i></div>
+                <div class="ulasan-name">Ah****d</div>
+              </div>
+            </div>
+          </li>
+
+          <li class="splide__slide">
+            <div class="ulasan-card">
+              <div class="ulasan-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="ulasan-text">"Dokter giginya sabar banget sama anak-anak, jadi anak gak takut kalau diajak periksa gigi. Mantap pelayanannya!"</p>
+              <div class="ulasan-author">
+                <div class="ulasan-avatar"><i class="fas fa-user"></i></div>
+                <div class="ulasan-name">Ma****a</div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+.ulasan-card { background: var(--clr-white); border: 1px solid var(--clr-gray-100); border-radius: var(--radius-xl); padding: 1.5rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 0.75rem; height: 100%; transition: all var(--transition-base); }
+.ulasan-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--clr-accent-light); }
+.ulasan-stars { color: #F59E0B; font-size: 0.9rem; }
+.ulasan-text { font-size: 0.95rem; color: var(--clr-gray-600); line-height: 1.6; font-style: italic; flex-grow: 1; margin:0;}
+.ulasan-author { display: flex; align-items: center; gap: 12px; margin-top: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--clr-gray-100); }
+.ulasan-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--clr-gray-100); display: flex; align-items: center; justify-content: center; color: var(--clr-gray-400); font-size: 1.2rem; }
+.ulasan-name { font-weight: 700; color: var(--clr-primary); font-size: 0.9rem; font-family: var(--font-heading); }
+</style>
 
 <style>
 /* Hold/Press effect — desktop only */
@@ -460,6 +517,22 @@ if (pengumumanData && pengumumanData.length > 1) {
           1024: { perPage: 3 },
           768:  { perPage: 2 },
           480:  { perPage: 1 }
+        }
+      }).mount();
+    }
+
+    if (document.getElementById('ulasanSplide')) {
+      new Splide('#ulasanSplide', {
+        type: 'loop',
+        perPage: 3,
+        gap: '1.5rem',
+        autoplay: true,
+        interval: 4000,
+        pagination: true,
+        arrows: false,
+        breakpoints: {
+          992: { perPage: 2 },
+          768: { perPage: 1 }
         }
       }).mount();
     }
